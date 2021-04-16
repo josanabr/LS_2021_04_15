@@ -8,6 +8,9 @@ docker build -t baseflask .
 
 ## ejecutar
 
+**IMPORTANTE** para poder ejecutar este contenedor es necesario tener un archivo llamado `demo-ls.json` y el  cual es generado de acuerdo a la documentacion indicada en [este enlace](https://gspread.readthedocs.io/en/latest/oauth2.html).
+**Sin este archivo el programa no podra correr**.
+
 ```
 docker run --rm -it -p 5001:5000 -v $(pwd):/workdir -d baseflask
 ```
