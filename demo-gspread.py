@@ -7,7 +7,8 @@ sh = gc.open("DEMO-LS")
 
 @app.route("/")
 def A1():
-  print(request.json['saludo'])
+  if request.json:
+    print(request.json['saludo'])
   return sh.sheet1.cell(1,1).value
 
 @app.route("/obtenervalor",methods=['POST'])
