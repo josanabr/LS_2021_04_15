@@ -1,7 +1,13 @@
 import gspread
+from flask import Flask
 
-gc = gspread.service_account()
-
+app = Flask(__name__)
+gc = gspread.service_account(filename="/workdir/demo-ls.json")
 sh = gc.open("DEMO-LS")
 
-print(sh.sheet1.get('A1'))
+@app.route("/")
+def A1():
+  return sh.sheet1.cell(1,1).value
+
+if  __name__ == '__main__':
+  app.run(host='0.0.0.0')
