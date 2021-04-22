@@ -29,4 +29,7 @@ Acceder al metodo `obtenervalor` del programa `demo-gspread.py`
 curl -X POST -H "Content-type: application/json" -d '{"row": "3", "col": "2" }' http://localhost:5001/obtenervalor
 ```
 
-
+Acceder al metodo `ponervalor` del programa `demo-gspread.py`
+```
+curl -X POST -H "Content-type: application/json" -d '{"row": "3", "col": "2" , "value":"mundo"}' http://localhost:5001/ponervalor
+```

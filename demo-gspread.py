@@ -17,5 +17,15 @@ def obtenervalor():
   col = request.json['col']
   return sh.sheet1.cell(row, col).value
 
+
+@app.route("/ponervalor",methods=['POST'])
+def ponervalor():
+  row = request.json['row']
+  col = request.json['col']
+  value = request.json['value']
+  sh.sheet1.update_cell(row, col, value)
+
+  return value
+
 if  __name__ == '__main__':
   app.run(host='0.0.0.0')
